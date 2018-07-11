@@ -5,22 +5,15 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 <title>Formulario Libro</title>
-<script type="text/javascript">
-	function validacion() {
-		if (document.forms[0].isbn.value == ""){
-			alert("datos no validos");
-		}else{
-			document.forms[0].submit();
-		}
-	}
-</script>
+<link rel="stylesheet" type="text/css" href="css/formato.css" />
+<script type="text/javascript" src="js/validacion.js" >
 <style type="text/css">
 	font-weigth:bold;
 </style>
 </head>
 <body>
 <h1>Formulario alta Libro</h1>
-<form action="insertarLibro.jsp">
+<form action="insertarLibro.jsp" onsubmit="return validacion()">
 <fieldset>
 	<legend>Formulario Registro de Libros</legend>
 	<p>
@@ -36,7 +29,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	<input type="text" name="categoria" id="categoria" /><br />
 	</p>
 	<p>
-	<input type="button" value="Registrar" onclick="validacion()" />
+	<input type="submit" value="Registrar" />
 	</p>
 </fieldset>
 </form>
