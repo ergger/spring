@@ -10,6 +10,21 @@
 <title>Lista de Libros</title>
 </head>
 <body>
+<select name="categoria">
+<option value="seleccionar">seleccionar</option>
+<%
+ResultSet rs=null;
+try {
+ String consultaSQL = "select distinct(categoria) from Libros";
+ DataBaseHelper helper = new DataBaseHelper();
+ rs=helper.seleccionarRegistros(consultaSQL);
+ while(rs.next()) { %>
+  <option value="<%=rs.getString("categoria")%>">
+  <%=rs.getString("categoria")%></option>
+  <% } 
+%>
+</select>
+<br />
 <%
 ResultSet rs = null;
 try {
