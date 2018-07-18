@@ -38,10 +38,20 @@ public class Libro {
     DataBaseHelper helper = new DataBaseHelper();
     helper.modificarRegistro(consultaSQL);
   }
-  public static ResultSet buscarTodos() {
+  public static ArrayList<Libro> buscarTodos() {
     String consultaSQL = "select isbn,titulo,categoria from Libros";
     DataBaseHelper helper = new DataBaseHelper();
     ResultSet rs = helper.seleccionarRegistros(consultaSQL);
-    return rs;
+    ArrayList<Libro> listaDeLibros= new ArrayList<Libro>();
+    try {
+      while (rs.next()) {
+        listaDeLibros.add(new Libro(rs.getString("isbn"),
+        rs.getString("titulo"),
+        rs.getString("categoria")));
+      }
+    } catch (SQLException e) {
+      System.out.println(e.getMessage());
+    }
+    return listaDeLibros;
   }
 }
