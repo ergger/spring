@@ -1,9 +1,11 @@
-package com.arquitecturajava;
+package com.arquitectura;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 public class DataBaseHelper {
   private static final String DRIVER = "com.mysql.jdbc.Driver";
   private static final String URL = "jdbc:mysql://localhost/arquitecturajava";

@@ -1,3 +1,9 @@
+package com.arquitectura;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class Libro {
   private String isbn;
   private String titulo;

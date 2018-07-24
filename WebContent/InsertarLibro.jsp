@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- sentencias de import necesarias para jdbc-->
-<%@ page import="com.arquitecturajava.DataBaseHelper"%>
-<% @page import="com.arquitecturajava.Libro"%>
+<%@ page import="com.arquitectura.DataBaseHelper"%>
+<%@ page import="com.arquitectura.Libro"%>
 <%
 String isbn= request.getParameter("isbn");
 String titulo= request.getParameter("titulo");
